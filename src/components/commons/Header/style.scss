@@ -29,7 +29,7 @@
     }
 
     #{&}__navbar {
-        margin-right: $margin-common;
+        margin-right: $margin-common + 2;
 
         .navbar__content {
             display: flex;
