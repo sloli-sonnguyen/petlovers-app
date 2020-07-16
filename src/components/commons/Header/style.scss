@@ -29,7 +29,7 @@
     }
 
     #{&}__navbar {
-        margin-right: $margin-common + 2;
+        margin-right: $margin-common + 2rem;
 
         .navbar__content {
             display: flex;
@@ -41,6 +41,23 @@
             font-weight: bold;
             color: $text-color-dark;
             cursor: pointer;
+        }
+    }
+
+    @media (max-width: 1400px) {
+        #{&}__title {
+            margin-left: $margin-common_2;
+        }
+        #{&}__navbar {
+            margin-right: $margin-common_2 + 2rem;
+        }
+    }
+    @media (max-width: 1150px) {
+        #{&}__title {
+            margin-left: $margin-common_3;
+        }
+        #{&}__navbar {
+            margin-right: $margin-common_3 + 2rem;
         }
     }
 }

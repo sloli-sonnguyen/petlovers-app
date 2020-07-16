@@ -68,6 +68,22 @@
     .login-form-wrap {
         margin-right: $margin-common;
     }
+    @media (max-width: 1400px) {
+        .effect-wrap {
+            margin-left: $margin-common_2;
+        }
+        .login-form-wrap {
+            margin-right: $margin-common_2;
+        }
+    }
+    @media (max-width: 1150px) {
+        .effect-wrap {
+            margin-left: $margin-common_3;
+        }
+        .login-form-wrap {
+            margin-right: $margin-common_3;
+        }
+    }
 }
 
 @keyframes effect-item-1 {
@@ -101,11 +117,5 @@
         transform: scale(1);
         bottom: 90%;
         left: 120%;
-    }
-}
-
-@media (max-width: 1300px) {
-    .effect-wrap {
-        font-size: 0px;
     }
 }
