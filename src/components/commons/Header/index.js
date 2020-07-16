@@ -14,7 +14,7 @@ function Header(props) {
                     <h1>Petlovers</h1>
                     <h4>Ngôi nhà cho những người thích chó mèo !</h4>
                 </div>
-                <div className="navbar">
+                <div className="header-content__navbar">
                     <ul className="navbar__content">
                         <li className="navbar__item">Liên hệ</li>
                         <li className="navbar__item">Hướng dẫn</li>
