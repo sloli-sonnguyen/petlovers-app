@@ -1,13 +1,36 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Switch, Route, Redirect, Link } from "react-router-dom";
+import NotFound from './components/commons/NotFound/index';
+import Login from './components/Login/index';
+
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <Router>
+      <div className="App">
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route path="/about" component={About} />
+          <Route path="/users" component={Users} />
+          <Route path="/" exact={true} component={Home} />
+          <Route component={NotFound} />
+        </Switch>
+      </div>
+    </Router>
   );
+}
+
+function Home() {
+  return <h2>Home</h2>;
+}
+
+function About() {
+  return <h2>About</h2>;
+}
+
+function Users() {
+  return <h2>Users</h2>;
 }
 
 export default App;
