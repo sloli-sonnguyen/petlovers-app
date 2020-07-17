@@ -14,10 +14,10 @@ function LoginForm(props) {
             <input type="text" placeholder="Email" required />
             <input type="text" placeholder="Mật khẩu" required />
             <button>Đăng nhập</button>
-            <div className="quick-login">
+            {/* <div className="quick-login">
                 <button>Google</button>
                 <button>Facebook</button>
-            </div>
+            </div> */}
             <p>Bạn chưa có tài khoản</p>
             <button className="create-account">Đăng ký mới</button>
         </form>

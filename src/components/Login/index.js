@@ -2,6 +2,10 @@ import React from 'react';
 import Header from '../commons/Header/index';
 import LoginForm from './LoginForm/index';
 import CatSVG from '../../assets/images/cat.svg';
+import BoneSVG from '../../assets/images/bone.svg';
+import FoodSVG from '../../assets/images/food.svg';
+import BallSVG from '../../assets/images/ball.svg';
+
 import './style.scss'
 function Login() {
     return (
@@ -24,6 +28,19 @@ function Login() {
                     </div>
                 </div>
             </div>
+            <footer className="footer">
+                <div className="footer-container">
+                    <div className="footer-container__item">
+                        <img src={BallSVG} />
+                    </div>
+                    <div className="footer-container__item">
+                        <img src={FoodSVG} />
+                    </div>
+                    <div className="footer-container__item">
+                        <img src={BoneSVG} />
+                    </div>
+                </div>
+            </footer>
         </div>
     );
 }
