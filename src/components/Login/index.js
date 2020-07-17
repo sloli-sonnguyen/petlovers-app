@@ -15,7 +15,7 @@ function Login() {
                 <div className="main-container">
                     <div className="effect-wrap">
                         <div className="effect-content">
-                            <img className="effect-content__svg" src={CatSVG} />
+                            <img className="effect-content__svg" src={CatSVG} alt="cat" />
                             <div className="effect-content__box">
                                 <div className="box__item"></div>
                                 <div className="box__item"></div>
@@ -31,13 +31,13 @@ function Login() {
             <footer className="footer">
                 <div className="footer-container">
                     <div className="footer-container__item">
-                        <img src={BallSVG} />
+                        <img alt="icon" src={BallSVG} />
                     </div>
                     <div className="footer-container__item">
-                        <img src={FoodSVG} />
+                        <img alt="icon" src={FoodSVG} />
                     </div>
                     <div className="footer-container__item">
-                        <img src={BoneSVG} />
+                        <img alt="icon" src={BoneSVG} />
                     </div>
                 </div>
             </footer>

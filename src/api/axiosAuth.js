@@ -1,11 +1,11 @@
-import axiosClient from './axiosClient';
+// import axiosClient from './axiosClient';
 
-const axiosAuth = {
-    postLogin: (inputLogin) => {
-        const url = 'login';
-        console.log(inputLogin);
-        return axiosClient.post(url, { inputLogin });
-    }
-};
+// const axiosAuth = {
+//     postLogin: (inputLogin) => {
+//         const url = 'login';
+//         console.log(inputLogin);
+//         return axiosClient.post(url, { inputLogin });
+//     }
+// };
 
-export default axiosAuth;
+// export default axiosAuth;
