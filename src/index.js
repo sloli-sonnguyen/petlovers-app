@@ -4,7 +4,11 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import axios from 'axios';
 require('dotenv').config();
-//axios.defaults.headers.common['x-access-token'] = localStorage.getItem('accessToken');
+
+// Set header token 
+if (localStorage.getItem('accessToken')) {
+  axios.defaults.headers.common['x-access-token'] = localStorage.getItem('accessToken');
+}
 ReactDOM.render(
   <React.StrictMode>
     <App />
