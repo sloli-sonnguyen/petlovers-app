@@ -48,9 +48,9 @@ function LoginForm(props) {
                      ta gọi request với axios thì nó sẽ tự động gán header x-access-token
                 */
                 const { accessToken } = data;
-                axios.defaults.headers.common['x-access-token'] = accessToken;
+                //axios.defaults.headers.common['x-access-token'] = accessToken;
                 // Lưu accessToken vào localstorage đẻ sau khi tắt browser , thì lần vào không cần login lại
-                localStorage.setItem('accessToken', accessToken);
+                //localStorage.setItem('accessToken', accessToken);
                 // render lai toast
                 setStatusLogin({ success, msg });
 
@@ -62,7 +62,6 @@ function LoginForm(props) {
 
     }
 
-    console.log(statusLogin);
 
     return (
         <form className="login-form" onSubmit={onHandleSubmit}>

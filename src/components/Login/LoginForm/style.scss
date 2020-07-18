@@ -88,27 +88,21 @@ $primary-width: 18rem;
 
         padding: 1.2rem 2rem;
         border-radius: 14px;
-        opacity: 0;
         &--success {
             background-color: #4ac27d;
         }
         &--fail {
             background-color: #ef738c;
         }
-        animation: toastEffect 3s linear 1;
+        transition: 0.6s;
+        animation: toastEffect 2s ease-in-out 1;
 
         @keyframes toastEffect {
             0% {
                 right: -1rem;
-                opacity: 1;
-            }
-            50% {
-                right: 2rem;
-                top: 2rem;
-                opacity: 1;
             }
             100% {
-                opacity: 0;
+                //opacity: 0;
                 right: 2rem;
                 top: 2rem;
             }
