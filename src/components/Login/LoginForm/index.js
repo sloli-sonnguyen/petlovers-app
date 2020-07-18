@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './style.scss';
 // import PropTypes from 'prop-types';
 import axios from 'axios';
@@ -75,7 +76,7 @@ function LoginForm(props) {
                 <button>Facebook</button>
             </div> */}
             <p>Bạn chưa có tài khoản</p>
-            <button className="create-account">Đăng ký mới</button>
+            <Link to="/signup" className="create-account">Đăng ký mới</Link>
         </form>
     );
 }

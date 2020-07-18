@@ -29,7 +29,8 @@ $primary-width: 18rem;
     }
 
     input,
-    button {
+    button,
+    a {
         width: $primary-width;
         margin: auto;
         margin-top: $primary-margin;
@@ -75,6 +76,11 @@ $primary-width: 18rem;
     .create-account {
         margin-top: 0;
         background-color: $green-dark;
+        color: white;
+        font-size: 0.8rem;
+
+        text-decoration: none;
+        cursor: pointer;
     }
 
     .login-toast {
