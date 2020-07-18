@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import axios from 'axios';
-axios.defaults.headers.common['x-access-token'] = localStorage.getItem('accessToken');
 require('dotenv').config();
+//axios.defaults.headers.common['x-access-token'] = localStorage.getItem('accessToken');
 ReactDOM.render(
   <React.StrictMode>
     <App />

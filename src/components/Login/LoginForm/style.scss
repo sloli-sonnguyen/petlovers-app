@@ -77,3 +77,24 @@ $primary-width: 18rem;
         background-color: $green-dark;
     }
 }
+
+.login-toast {
+    position: fixed;
+    right: 0rem;
+    top: 2rem;
+    &--success {
+        background-color: green;
+    }
+    &--fail {
+        background-color: tomato;
+    }
+    animation: hideEffect 3s linear;
+}
+@keyframes hideEffect {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
