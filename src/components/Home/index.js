@@ -34,7 +34,7 @@ function Home(props) {
                                 <div className="newfeeds-item__body">
                                     <p className="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                                     <div className="image"></div>
-                                    <div>
+                                    <div className="react-info">
                                         <span>Muromi</span> và 2 người thích • 0 bình luận
                                     </div>
                                 </div>
