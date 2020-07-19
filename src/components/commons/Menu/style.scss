@@ -1,0 +1,53 @@
+.menu {
+    background-color: transparent;
+    font-family: sans-serif;
+    width: 100%;
+
+    .wrap-content {
+        width: 100%;
+    }
+
+    #{&}__item {
+        margin-top: 1rem;
+        border-radius: 30px;
+
+        .link {
+            display: flex;
+            align-items: center;
+
+            text-decoration: none;
+            color: #505c6c;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+
+        .icon {
+            width: 2.6rem;
+            height: 2.6rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-right: 1rem;
+
+            background-color: aqua;
+            border-radius: 100%;
+            img {
+                height: 1.5rem;
+            }
+        }
+
+        &:hover {
+            background-color: white;
+            .link {
+                color: #ff3162;
+            }
+        }
+
+        &--active {
+            background-color: white;
+            .link {
+                color: #ff3162;
+            }
+        }
+    }
+}

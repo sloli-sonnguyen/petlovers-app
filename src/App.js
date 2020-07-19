@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-d
 import NotFound from './components/commons/NotFound/index';
 import Login from './components/Login/index';
 import Signup from './components/Signup/index';
-require('dotenv').config();
+import Home from './components/Home/index';
 
 
 function App() {
@@ -17,6 +17,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/users" component={Users} />
           <Route path="/" exact={true} component={Home} />
+          <Route path="/profile" component={Profile} />
           <Route component={NotFound} />
         </Switch>
       </div>
@@ -24,9 +25,6 @@ function App() {
   );
 }
 
-function Home() {
-  return <h2>Home</h2>;
-}
 
 function About() {
   return <h2>About</h2>;
@@ -34,6 +32,10 @@ function About() {
 
 function Users() {
   return <h2>Users</h2>;
+}
+
+function Profile() {
+  return <h2>Profile</h2>;
 }
 
 export default App;
