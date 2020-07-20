@@ -1,0 +1,56 @@
+.follower-box {
+    position: fixed;
+    width: 24.7rem;
+
+    &__title {
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 1rem;
+        text-indent: 1.3rem;
+        line-height: 3.5rem;
+
+        color: #5f5e5e;
+        border-bottom: 1px solid #ddd;
+    }
+
+    &__search {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-left: 1.3rem;
+        margin-top: 1rem;
+        input {
+            line-height: 2rem;
+            width: 70%;
+            margin-right: 1rem;
+
+            text-indent: 1rem;
+            color: #868080;
+            border: 1px solid #ddd;
+
+            border-radius: 10px;
+            outline: none;
+        }
+
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 0.4rem 0.9rem;
+            background-color: #69a6df;
+            border-radius: 4px;
+            border: none;
+            img {
+                height: 1.3rem;
+                width: 1.3rem;
+            }
+        }
+    }
+
+    &__list {
+        width: 100%;
+        margin-top: 1rem;
+        background-color: tomato;
+    }
+}

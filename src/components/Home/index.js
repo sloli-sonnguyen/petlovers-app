@@ -4,6 +4,7 @@ import Header from '../commons/Header/index';
 import Menu from '../commons/Menu/index';
 import CreatePost from './CreatePost/index';
 import NewFeed from '../commons/Newfeed/index';
+import searchSVG from '../../assets/images/search.svg';
 
 
 
@@ -20,7 +21,9 @@ function Home(props) {
                         <CreatePost />
                         <NewFeed />
                     </div>
-                    <div className="main__follower"></div>
+                    <div className="main__follower">
+
+                    </div>
                 </div>
             </div>
         </div>
