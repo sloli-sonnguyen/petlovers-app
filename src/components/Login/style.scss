@@ -1,9 +1,10 @@
 @import "../commons/styles/variables";
 
 .login {
-    height: 100vh;
     background-color: $primary-color;
+
     .main {
+        margin-top: 10vh;
         height: 70vh;
 
         .main-container {

@@ -1,7 +1,6 @@
 import React from 'react';
 import './style.scss';
 import Header from '../commons/Header/index';
-import Menu from '../commons/Menu/index';
 import CreatePost from './CreatePost/index';
 import NewFeed from '../commons/Newfeed/index';
 import FollowerBox from '../FollowerBox/index'

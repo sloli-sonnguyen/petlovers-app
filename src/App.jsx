@@ -1,38 +1,37 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import PrivateRoute from './PrivateRoute';
+import { AuthContext } from './context/authContext';
 import NotFound from './components/commons/NotFound/index';
 import Login from './components/Login/index';
 import Signup from './components/Signup/index';
 import Home from './components/Home/index';
 import Profile from './components/Profile/index.jsx';
+import { useState } from 'react';
 
 function App() {
+
+  const accessToken = localStorage.getItem("accessToken");
+  const [authToken, setAuthToken] = useState(accessToken);
   return (
-    <Router>
-      <div className="App">
-        <Switch>
-          <Route path="/login" component={Login} />
-          <Route path="/signup" component={Signup} />
-          <Route path="/about" component={About} />
-          <Route path="/users" component={Users} />
-          <Route path="/" exact={true} component={Home} />
-          <Route path="/profile" component={Profile} />
-          <Route component={NotFound} />
-        </Switch>
-      </div>
-    </Router>
+    <AuthContext.Provider value={{ authToken: authToken, setAuthToken: setAuthToken }}>
+      <Router>
+        <div className="App">
+          <Switch>
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
+            <PrivateRoute path="/" exact={true} component={Home} />
+            <PrivateRoute path="/profile" component={Profile} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
+      </Router>
+    </AuthContext.Provider>
   );
 }
 
 
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
-}
 
 
 export default App;

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import './style.scss';
 import worldSVG from '../../../assets/images/world.svg';
 import likeSVG from '../../../assets/images/like.svg';

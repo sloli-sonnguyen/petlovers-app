@@ -1,11 +1,18 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import './style.scss';
+import { useAuth } from '../../context/authContext';
 
 
 
 function Signup(props) {
 
+    const history = useHistory();
+    const { authToken } = useAuth();
+    if (authToken) {
+        history.push('/');
+    }
     const [inputUser, setInputUser] = useState({
         email: '',
         password: '',
@@ -40,6 +47,8 @@ function Signup(props) {
             const url = process.env.REACT_APP_API_URL + 'signup';
             axios.post(url, newUser).then(res => {
                 console.log(res);
+                alert('Đăng ký thành công !');
+                history.push('/login');
             })
 
         }

@@ -1,10 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import searchSVG from '../../assets/images/search.svg';
 import './style.scss';
-FollowerBox.propTypes = {
 
-};
 
 function FollowerBox(props) {
     return (
@@ -12,7 +9,7 @@ function FollowerBox(props) {
             <h1 className="follower-box__title">Theo dõi</h1>
             <div className="follower-box__search">
                 <input type="text" placeholder="Tìm kiếm ai đó . . . " />
-                <button><img src={searchSVG} /></button>
+                <button><img src={searchSVG} alt="search" /></button>
             </div>
             <div className="follower-box__list">
                 <div className="follower-box__item">

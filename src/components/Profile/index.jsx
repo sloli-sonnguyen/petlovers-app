@@ -1,4 +1,4 @@
-import React, { Profiler } from 'react';
+import React from 'react';
 import './style.scss';
 import Header from '../commons/Header/index';
 import NewFeed from '../commons/Newfeed/index';
@@ -30,7 +30,7 @@ function Profile(props) {
     function renderImages(list) {
         return list.map((item, index) => {
             return (
-                <div key={index} className="item"><img src={item.url} alt="image" className="image" /></div>
+                <div key={index} className="item"><img src={item.url} alt="pet" className="image" /></div>
             );
         });
     }
