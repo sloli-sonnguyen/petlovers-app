@@ -14,7 +14,7 @@ $position-common: 5%;
         .box-info {
             position: relative;
             width: 100%;
-            height: 700px;
+            height: 600px;
             background-size: cover;
             background-position: center;
 
@@ -64,10 +64,10 @@ $position-common: 5%;
                 .name {
                     font-family: sans-serif;
                     font-weight: bold;
-                    font-size: 2rem;
+                    font-size: 1.4rem;
                     color: white;
 
-                    padding: 2rem 4rem;
+                    padding: 1.5rem 3rem;
                     background-color: rgba(0, 0, 0, 0.2);
                     border-radius: 1rem;
                 }
