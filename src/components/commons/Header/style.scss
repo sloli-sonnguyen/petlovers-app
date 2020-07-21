@@ -33,11 +33,65 @@
     }
 
     #{&}__navbar {
-        margin-right: $margin-common + 2rem;
+        margin-right: $margin-common;
 
         .navbar__content {
             display: flex;
+            align-items: center;
             list-style: none;
+
+            .info {
+                display: flex;
+                align-items: center;
+
+                padding: 0;
+                border-radius: 20px;
+                margin: 0rem 1rem;
+                background-color: white;
+
+                p {
+                    text-align: left;
+                    text-indent: 1rem;
+                    width: 200px;
+                }
+
+                .avatar {
+                    height: 3rem;
+                    width: 3rem;
+
+                    background-color: tomato;
+                    border-radius: 100%;
+                    background-position: center;
+                    background-size: cover;
+                }
+            }
+
+            .bell {
+                position: relative;
+            }
+
+            .bell::before {
+                content: "";
+                height: 0.6rem;
+                width: 0.6rem;
+                background-color: tomato;
+                border-radius: 100%;
+                position: absolute;
+                right: 5px;
+                top: 5px;
+            }
+
+            .menu {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-bottom: none;
+                padding: 0px;
+            }
+            img {
+                width: 2.5rem;
+                height: 2.5rem;
+            }
         }
         .navbar__item {
             padding-left: 2rem;

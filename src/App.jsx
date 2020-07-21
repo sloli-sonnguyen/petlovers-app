@@ -5,7 +5,7 @@ import NotFound from './components/commons/NotFound/index';
 import Login from './components/Login/index';
 import Signup from './components/Signup/index';
 import Home from './components/Home/index';
-
+import Profile from './components/Profile/index.jsx';
 
 function App() {
   return (
@@ -34,8 +34,5 @@ function Users() {
   return <h2>Users</h2>;
 }
 
-function Profile() {
-  return <h2>Profile</h2>;
-}
 
 export default App;

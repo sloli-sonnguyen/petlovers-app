@@ -4,7 +4,7 @@
     width: 100%;
     margin-top: 10vh;
 
-    background-color: #edf2f9;
+    background-color: $secondary-color;
 
     .main {
         width: 100%;
@@ -12,29 +12,59 @@
 
         .main-container {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             margin-left: $margin-common;
             margin-right: $margin-common;
         }
-        @media (max-width: 1500px) {
-            .main-container {
-                margin-left: $margin-common_2;
-                margin-right: $margin-common_2;
-            }
-        }
-
-        &__menu {
-            width: 15rem;
-        }
 
         &__content {
+            left: 100%;
             margin-top: 1rem;
-            width: 50rem;
+            width: 55rem;
             margin-right: 1rem;
             margin-left: 1rem;
         }
 
         &__follower {
+            position: fixed;
+            right: $margin-common;
+            width: 20rem;
+        }
+
+        @media (max-width: 1650px) {
+            &__content {
+                width: 40rem;
+            }
+        }
+        @media (max-width: 1450px) {
+            &__content {
+                width: 35rem;
+            }
+        }
+
+        @media (max-width: 1300px) {
+            .main-container {
+                margin-left: 8%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .main-container {
+                justify-content: center;
+                margin: auto;
+            }
+            &__content {
+                width: 50rem;
+            }
+            &__follower {
+                display: none;
+            }
+        }
+
+        @media (max-width: 900px) {
+            &__content {
+                width: 26rem;
+            }
         }
     }
 }
