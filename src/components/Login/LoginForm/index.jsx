@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useHistory, Redirect } from 'react-router-dom';
 import './style.scss';
 import axios from 'axios';
 import { useAuth } from '../../../context/authContext';
@@ -20,9 +20,6 @@ function LoginForm(props) {
     const [statusLogin, setStatusLogin] = useState(null);
     const history = useHistory();
     const { authToken, setAuthToken } = useAuth();
-    if (authToken) {
-        history.push('/');
-    }
 
     function inputHandle(event) {
         const name = event.target.name;
@@ -57,7 +54,7 @@ function LoginForm(props) {
                 console.log(userInfo);
                 // set useinfo vao localstorage
                 localStorage.setItem('userInfo', JSON.stringify(userInfo));
-                history.push('/');
+                history.push('/profile');
 
             } else {
                 // login fail massage
@@ -65,6 +62,10 @@ function LoginForm(props) {
             }
         })
 
+    }
+
+    if (authToken && localStorage.getItem('userInfo')) {
+        history.push('/');
     }
 
 
