@@ -9,7 +9,7 @@ function CreatePost(props) {
     function onCreatePost() {
         const post = {
             imageUrl: 'https://thumbor.forbes.com/thumbor/fit-in/1200x0/filters%3Aformat%28jpg%29/https%3A%2F%2Fspecials-images.forbesimg.com%2Fimageserve%2F5de6f2d8c283810006a3947f%2F0x0.jpg',
-            userId: '5f18147a36a1af3880c01367',
+            userId: userInfo.id,
             caption: 'Hom nay toi doi qua. An gi day nhi cac ban oi !',
             createAt: '22/07/2020'
         }

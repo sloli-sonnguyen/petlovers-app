@@ -18,7 +18,11 @@ function NewFeed(props) {
     const { userInfo } = props;
 
     useEffect(() => {
-        const { id } = userInfo;
+        let id;
+        if (userInfo) {
+            id = userInfo.id;
+        }
+
         // get theo userid
         const url = process.env.REACT_APP_API_URL + `posts/by-userId/${id}`;
         axios.get(url)
