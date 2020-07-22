@@ -41,7 +41,7 @@ function LoginForm(props) {
     function onHandleSubmit(event) {
         event.preventDefault();
 
-        const url = 'http://localhost:5000/api/v1/auth/login';
+        const url = process.env.REACT_APP_API_URL + 'auth/login';
         axios.post(url, inputUser).then(res => {
             const { data } = res;
             const { success, msg } = data;

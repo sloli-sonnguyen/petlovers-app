@@ -9,13 +9,14 @@ Header.propTypes = {
 };
 
 function renderNav(userLogined) {
+    const defaultAvatar = 'https://iupac.org/wp-content/uploads/2018/05/default-avatar.png';
     if (userLogined) {
         return (
             <div className="header-content__navbar">
                 <ul className="navbar__content">
                     <li className="navbar__item bell"><img src={bellSVG} alt="bell" /></li>
                     <li className="navbar__item info">
-                        <div className="avatar" style={{ backgroundImage: `url(${userLogined.avatarUrl})` }}></div>
+                        <div className="avatar" style={{ backgroundImage: `url(${userLogined.avatarUrl || defaultAvatar})` }}></div>
                         <p>{userLogined.name}</p>
                     </li>
                     <li className="navbar__item menu"><img src={menuSVG} alt="menu" /></li>

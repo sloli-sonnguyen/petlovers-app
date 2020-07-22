@@ -8,12 +8,14 @@ import Login from './components/Login/index';
 import Signup from './components/Signup/index';
 import Home from './components/Home/index';
 import Profile from './components/Profile/index.jsx';
+import axios from 'axios';
 import { useState } from 'react';
 
 function App() {
 
   const accessToken = localStorage.getItem("accessToken");
   const [authToken, setAuthToken] = useState(accessToken);
+  axios.defaults.headers.common['x-access-token'] = accessToken;
 
   return (
     <AuthContext.Provider value={{ authToken: authToken, setAuthToken: setAuthToken }}>

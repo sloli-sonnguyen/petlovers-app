@@ -1,70 +1,43 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import axios from 'axios';
+import NewFeedItem from './NewFeedItem';
 import './style.scss';
-import worldSVG from '../../../assets/images/world.svg';
-import likeSVG from '../../../assets/images/like.svg';
-import saveSVG from '../../../assets/images/save.svg';
-import commentSVG from '../../../assets/images/comment.svg';
-NewFeed.propTypes = {
+import { useEffect } from 'react';
+import { useState } from 'react';
 
+NewFeed.propTypes = {
+    userInfo: PropTypes.object
 };
 
+
+
 function NewFeed(props) {
+
+    const [posts, setPosts] = useState([]);
+    const { userInfo } = props;
+
+    useEffect(() => {
+        const { id } = userInfo;
+        // get theo userid
+        const url = process.env.REACT_APP_API_URL + `posts/by-userId/${id}`;
+        axios.get(url)
+            .then(res => {
+                console.log('oke');
+                console.log(res);
+                setPosts(res.data);
+            })
+    }, [])
+
     return (
         <div className="newfeeds">
-            <div className="newfeeds-item">
-                <div className="newfeeds-item__header">
-                    <div className="avatar"></div>
-                    <div className="info">
-                        <p className="user-name">Mukarumi</p>
-                        <p className="time">2 giờ trước • <img src={worldSVG} alt="world" /> </p>
-                    </div>
-                </div>
-                <div className="newfeeds-item__body">
-                    <p className="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <div className="image"></div>
-                    <div className="react-info">
-                        <span>Muromi</span> và 2 người thích • 0 bình luận
-                </div>
-                </div>
-                <div className="newfeeds-item__react">
-                    <ul className="type-react">
-                        <li><img src={likeSVG} alt="like" />Thích</li>
-                        <li><img src={commentSVG} alt="comment" />Bình luận</li>
-                        <li><img src={saveSVG} alt="save" />Lưu</li>
-                    </ul>
-                    <div className="comment">
-                        <div className="avatar"></div>
-                        <input type="text" placeholder="Hãy bình luận gì đó . . ." />
-                    </div>
-                </div>
-            </div>
-            <div className="newfeeds-item">
-                <div className="newfeeds-item__header">
-                    <div className="avatar"></div>
-                    <div className="info">
-                        <p className="user-name">Mukarumi</p>
-                        <p className="time">2 giờ trước • <img src={worldSVG} alt="world" /> </p>
-                    </div>
-                </div>
-                <div className="newfeeds-item__body">
-                    <p className="content">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <div className="image"></div>
-                    <div className="react-info">
-                        <span>Muromi</span> và 2 người thích • 0 bình luận
-                </div>
-                </div>
-                <div className="newfeeds-item__react">
-                    <ul className="type-react">
-                        <li><img src={likeSVG} alt="like" />Thích</li>
-                        <li><img src={commentSVG} alt="comment" />Bình luận</li>
-                        <li><img src={saveSVG} alt="save" />Lưu</li>
-                    </ul>
-                    <div className="comment">
-                        <div className="avatar"></div>
-                        <input type="text" placeholder="Hãy bình luận gì đó . . ." />
-                    </div>
-                </div>
-            </div>
+            {
+                posts.map((post, index) => {
+                    return (
+                        <NewFeedItem key={index} post={post} currentUserInfo={userInfo} />
+                    )
+                })
+            }
         </div>
     );
 }
