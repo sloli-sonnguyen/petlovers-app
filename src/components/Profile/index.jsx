@@ -15,7 +15,10 @@ function Profile(props) {
     const defaultBackgroundUrl = 'https://img2.pngio.com/default-png-5-png-image-default-png-1200_800.png';
     const defaultAvatarUrl = 'https://img2.pngio.com/index-of-wp-content-themes-fgm21-child-assets-images-default-png-495_495.png';
     // lay du lieu user da luu tren storage
-    let getUserInfo = JSON.parse(localStorage.getItem('userInfo'));
+    let getUserInfo = {};
+    if (localStorage.getItem('userInfo')) {
+        getUserInfo = JSON.parse(localStorage.getItem('userInfo'));
+    }
     if (!getUserInfo.backgroundUrl) {
         getUserInfo = {
             ...getUserInfo,

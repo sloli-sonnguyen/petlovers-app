@@ -6,13 +6,9 @@ import { useAuth } from '../../../context/authContext';
 
 
 function renderToast(success, msg) {
-    if (success) {
+    if (!success) {
         return (
             <div className="login-toast login-toast--success">{msg}</div>
-        )
-    } else {
-        return (
-            <div className="login-toast login-toast--fail">{msg}</div>
         )
     }
 }
@@ -58,6 +54,7 @@ function LoginForm(props) {
                 // render lai toast
                 setStatusLogin({ success, msg });
                 setAuthToken(accessToken);
+                console.log(userInfo);
                 // set useinfo vao localstorage
                 localStorage.setItem('userInfo', JSON.stringify(userInfo));
                 history.push('/');
