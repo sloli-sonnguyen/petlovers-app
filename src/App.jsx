@@ -14,6 +14,7 @@ function App() {
 
   const accessToken = localStorage.getItem("accessToken");
   const [authToken, setAuthToken] = useState(accessToken);
+
   return (
     <AuthContext.Provider value={{ authToken: authToken, setAuthToken: setAuthToken }}>
       <Router>
@@ -27,7 +28,7 @@ function App() {
           </Switch>
         </div>
       </Router>
-    </AuthContext.Provider>
+    </AuthContext.Provider >
   );
 }
 

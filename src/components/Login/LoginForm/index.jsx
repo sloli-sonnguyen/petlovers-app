@@ -41,7 +41,7 @@ function LoginForm(props) {
     function onHandleSubmit(event) {
         event.preventDefault();
 
-        const url = process.env.REACT_APP_API_URL + 'login';
+        const url = 'http://localhost:5000/api/v1/auth/login';
         axios.post(url, inputUser).then(res => {
             const { data } = res;
             const { success, msg } = data;
@@ -51,13 +51,15 @@ function LoginForm(props) {
                     chúng ta set giá trị mặc định cho request header để từ lần sau trở đi,
                      ta gọi request với axios thì nó sẽ tự động gán header x-access-token
                 */
-                const { accessToken } = data;
+                const { accessToken, userInfo } = data;
                 axios.defaults.headers.common['x-access-token'] = accessToken;
                 // Lưu accessToken vào localstorage đẻ sau khi tắt browser , thì lần vào không cần login lại
                 localStorage.setItem('accessToken', accessToken);
                 // render lai toast
                 setStatusLogin({ success, msg });
                 setAuthToken(accessToken);
+                // set useinfo vao localstorage
+                localStorage.setItem('userInfo', JSON.stringify(userInfo));
                 history.push('/');
 
             } else {

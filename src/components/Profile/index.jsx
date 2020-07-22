@@ -2,8 +2,7 @@ import React from 'react';
 import './style.scss';
 import Header from '../commons/Header/index';
 import NewFeed from '../commons/Newfeed/index';
-import cameraSVG from '../../assets/images/camera.svg';
-import editSVG from '../../assets/images/edit.svg';
+import BoxInfo from './BoxInfo/index';
 import gallerySVG from '../../assets/images/gallery.svg';
 
 
@@ -40,20 +39,7 @@ function Profile(props) {
             <Header userLogined={user} />
             <div className="profile__main">
                 <div className="container">
-                    <div className="box-info" style={{ backgroundImage: `url(${user.backgroudUrl})` }}>
-                        <div className="upload">
-                            <img src={cameraSVG} alt="camera" />
-                            <p>Cập nhật ảnh bìa</p>
-                        </div>
-                        <div className="box-info__content">
-                            <div className="avatar" style={{ backgroundImage: `url(${user.avatarUrl})` }}></div>
-                            <p className="name">{user.name}</p>
-                        </div>
-                        <div className="box-info__edit">
-                            <img src={editSVG} alt="edit" />
-                            <p>Cập nhật thông tin</p>
-                        </div>
-                    </div>
+                    <BoxInfo />
                     <div className="content">
                         <div className="newfeed-wrap">
                             <NewFeed />

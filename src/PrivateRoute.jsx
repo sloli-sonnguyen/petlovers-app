@@ -6,7 +6,6 @@ function PrivateRoute({ component: Component, ...rest }) {
 
     // ta da set mac dinh la false
     const { authToken } = useAuth();
-    console.log(authToken);
     return (
         <Route {...rest} render={(props) => (
             authToken ? <Component {...props} /> : <Redirect to="/login" />

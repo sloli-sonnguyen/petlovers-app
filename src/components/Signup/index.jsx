@@ -44,7 +44,7 @@ function Signup(props) {
             console.log('Oke');
             const { name, email, password } = inputUser;
             const newUser = { name, email, password };
-            const url = process.env.REACT_APP_API_URL + 'signup';
+            const url = process.env.REACT_APP_API_URL + 'auth/signup';
             axios.post(url, newUser).then(res => {
                 console.log(res);
                 alert('Đăng ký thành công !');
