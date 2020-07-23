@@ -31,7 +31,7 @@ function NewFeed(props) {
                 const data = res.data.reverse();
                 setPosts(data);
             })
-    }, [])
+    }, []);
 
     return (
         <div className="newfeeds">

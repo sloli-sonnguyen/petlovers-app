@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import bellSVG from '../../../assets/images/menu/bell.svg';
-import bookmarkSVG from '../../../assets/images/menu/bookmark.svg';
-import eventSVG from '../../../assets/images/menu/event.svg';
-import groupSVG from '../../../assets/images/menu/group.svg';
+// import bellSVG from '../../../assets/images/menu/bell.svg';
+// import bookmarkSVG from '../../../assets/images/menu/bookmark.svg';
+// import eventSVG from '../../../assets/images/menu/event.svg';
+// import groupSVG from '../../../assets/images/menu/group.svg';
 import homeSVG from '../../../assets/images/menu/home.svg';
 import userSVG from '../../../assets/images/menu/user.svg';
 import './style.scss';
