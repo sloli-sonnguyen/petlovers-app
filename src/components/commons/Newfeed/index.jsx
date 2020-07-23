@@ -28,8 +28,8 @@ function NewFeed(props) {
         axios.get(url)
             .then(res => {
                 console.log('oke');
-                console.log(res);
-                setPosts(res.data);
+                const data = res.data.reverse();
+                setPosts(data);
             })
     }, [])
 

@@ -9,6 +9,7 @@
     "axios": "^0.19.2",
     "cloudinary-core": "^2.10.3",
     "cloudinary-react": "^1.6.2",
+    "javascript-time-ago": "^2.0.13",
     "query-string": "^6.13.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

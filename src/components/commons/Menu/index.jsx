@@ -16,10 +16,10 @@ import './style.scss';
 const list = [
     { title: 'Trang chủ', color: '#63D5FA', path: "/", icon: homeSVG },
     { title: 'Tài khoản', color: '#E8AB73', path: "/profile", icon: userSVG },
-    { title: 'Thông báo', color: '#14B1AB', path: "/notification", icon: bellSVG },
-    { title: 'Nhóm', color: '#B296EC', path: "/group", icon: groupSVG },
-    { title: 'Sự kiện', color: '#FC5E84', path: "/event", icon: eventSVG },
-    { title: 'Đã lưu', color: '#00E08F', path: "/bookmark", icon: bookmarkSVG }
+    // { title: 'Thông báo', color: '#14B1AB', path: "/notification", icon: bellSVG },
+    // { title: 'Nhóm', color: '#B296EC', path: "/group", icon: groupSVG },
+    // { title: 'Sự kiện', color: '#FC5E84', path: "/event", icon: eventSVG },
+    // { title: 'Đã lưu', color: '#00E08F', path: "/bookmark", icon: bookmarkSVG }
 ];
 
 function renderMenu(list, location) {

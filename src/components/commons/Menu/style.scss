@@ -1,18 +1,24 @@
 .menu {
-    background-color: transparent;
+    position: fixed;
+    top: 5rem;
+    right: 5rem;
+    width: 250px;
+    display: flex;
+
+    background-color: #fffce9;
     font-family: sans-serif;
-    width: 100%;
 
     padding-bottom: 2rem;
     border-bottom: 2px solid #ddd;
-
-    .wrap-content {
-        width: 100%;
-    }
+    border-radius: 14px;
+    box-shadow: 0px 0px 5px rgba($color: #fffce9, $alpha: 0.7);
 
     #{&}__item {
-        margin-top: 1rem;
+        margin-left: 2rem;
+        margin-top: 2rem;
+        padding-right: 3rem;
         border-radius: 30px;
+        cursor: pointer;
 
         list-style: none;
 

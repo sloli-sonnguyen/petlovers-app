@@ -16,9 +16,6 @@ function Home(props) {
             <Header userLogined={userInfo} />
             <div className="main">
                 <div className="main-container">
-                    {/* <div className="main__menu">
-                        <Menu />
-                    </div> */}
                     <div className="main__content">
                         <CreatePost userInfo={userInfo} />
                         <NewFeed />
