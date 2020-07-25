@@ -52,7 +52,7 @@ function Profile(props) {
             }
             setUserInfo(newUserInfo);
         })
-    }, []);
+    }, [userId]);
 
     function onUploadImage(newUserInfo) {
         localStorage.setItem('userInfo', JSON.stringify(newUserInfo));
