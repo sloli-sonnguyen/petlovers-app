@@ -14,7 +14,7 @@ BoxInfo.propTypes = {
 
 function BoxInfo(props) {
 
-    const { userInfo, onUploadImage } = props;
+    const { userInfo, onUploadImage, isMe } = props;
 
     // upload image
     function beginUpload(type) {
@@ -49,18 +49,19 @@ function BoxInfo(props) {
 
     return (
         <div className="box-info" style={{ backgroundImage: `url(${userInfo.backgroundUrl})` }}>
-            <div className="upload" onClick={() => beginUpload('backgroundUrl')}>
+            {isMe && <div className="upload" onClick={() => beginUpload('backgroundUrl')}>
                 <img src={cameraSVG} alt="camera" />
                 <p>Cập nhật ảnh bìa</p>
-            </div>
+            </div>}
             <div className="box-info__content">
-                <div onClick={() => beginUpload('avatarUrl')} className="avatar" style={{ backgroundImage: `url(${userInfo.avatarUrl})` }}></div>
+                {isMe && <div onClick={() => beginUpload('avatarUrl')} className="avatar" style={{ backgroundImage: `url(${userInfo.avatarUrl})` }}></div>}
+                {isMe || <div className="avatar" style={{ backgroundImage: `url(${userInfo.avatarUrl})` }}></div>}
                 <p className="name">{userInfo.name}</p>
             </div>
-            <div className="box-info__edit">
+            {isMe && <div className="box-info__edit">
                 <img src={editSVG} alt="edit" />
                 <p>Cập nhật thông tin</p>
-            </div>
+            </div>}
         </div>
     );
 }

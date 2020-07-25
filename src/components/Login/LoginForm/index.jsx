@@ -54,7 +54,7 @@ function LoginForm(props) {
                 console.log(userInfo);
                 // set useinfo vao localstorage
                 localStorage.setItem('userInfo', JSON.stringify(userInfo));
-                history.push('/profile');
+                history.push(`/profile/${userInfo.id}`);
 
             } else {
                 // login fail massage

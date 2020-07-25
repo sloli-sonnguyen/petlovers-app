@@ -46,7 +46,7 @@ function Header(props) {
 
     return (
         <div className="header-wrap">
-            {menuStatus && <Menu />}
+            {menuStatus && <Menu userInfo={userLogined} />}
             <div className="header-content">
                 <div className="header-content__title">
                     <h1>Petlovers</h1>

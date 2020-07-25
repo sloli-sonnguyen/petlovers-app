@@ -25,7 +25,7 @@ function App() {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <PrivateRoute path="/" exact={true} component={Home} />
-            <PrivateRoute path="/profile" component={Profile} />
+            <PrivateRoute path="/profile/:userId" component={Profile} />
             <Route component={NotFound} />
           </Switch>
         </div>

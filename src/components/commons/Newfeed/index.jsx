@@ -5,6 +5,7 @@ import NewFeedItem from './NewFeedItem';
 import './style.scss';
 import { useEffect } from 'react';
 import { useState } from 'react';
+import GuideBox from './GuideBox';
 
 NewFeed.propTypes = {
     userInfo: PropTypes.object,
@@ -24,30 +25,17 @@ function shuffleArray(array) {
 function NewFeed(props) {
 
     const [posts, setPosts] = useState([]);
-    const { userInfo, followings } = props;
+    const { userInfo, followings, type } = props;
 
     useEffect(() => {
 
-        console.log('run effect newfeed')
-        // get theo userid
-        // let id = userInfo.id;
-        // const url = process.env.REACT_APP_API_URL + `posts/by-userId/${id}`;
-        // axios.get(url)
-        //     .then(res => {
-        //         console.log('oke');
-        //         const data = res.data.reverse();
-        //         setPosts([
-        //             ...posts,
-        //             ...data
-        //         ]);
-        //     })
         // Lay post cua nhung nguoi minh dang follow
-        const postUserId = followings || [userInfo.id];
-        if (postUserId) {
+        const postUserIds = followings || [userInfo.id];
+        if (postUserIds) {
             const url = process.env.REACT_APP_API_URL + `posts/by-userId/`;
             let arrayAxios = [];
-            for (let i = 0; i < postUserId.length; i++) {
-                arrayAxios.push(axios.get(url + postUserId[i]));
+            for (let i = 0; i < postUserIds.length; i++) {
+                arrayAxios.push(axios.get(url + postUserIds[i]));
             }
             axios.all(arrayAxios).then(resArray => {
                 let dataArray = resArray.map(item => {
@@ -62,17 +50,18 @@ function NewFeed(props) {
             });
         }
 
-    }, [followings]);
+    }, [followings, userInfo]);
 
     return (
         <div className="newfeeds">
-            {
+            {posts.length > 0 &&
                 posts.map((post, index) => {
                     return (
                         <NewFeedItem key={index} post={post} currentUserInfo={userInfo} />
                     )
                 })
             }
+            {posts.length > 0 || <GuideBox type={type} userInfo={userInfo} />}
         </div>
     );
 }

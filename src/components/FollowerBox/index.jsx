@@ -1,5 +1,6 @@
 import React from 'react';
 import searchSVG from '../../assets/images/search.svg';
+import { Link } from 'react-router-dom';
 import './style.scss';
 import axios from 'axios';
 
@@ -26,7 +27,7 @@ function FollowerBox(props) {
                 ...listNotFollowing
             ];
             newListNotFollowing.splice(index, 1);
-            setListNotFollowing(newListNotFollowing);
+            setListNotFollowing(newListNotFollowing.slice(0, 10));
         })
 
 
@@ -44,10 +45,10 @@ function FollowerBox(props) {
                     listNotFollowing.map((item, index) => {
                         return (
                             <div key={index} className="follower-box__item">
-                                <div className="avatar" style={{ backgroundImage: `url(${item.avatarUrl})` }}></div>
-                                <div className="info">
+                                <Link to={`/profile/${item._id}`} className="avatar" style={{ backgroundImage: `url(${item.avatarUrl})` }}></Link>
+                                <Link to={`/profile/${item._id}`} className="info">
                                     <p className="user-name">{item.name}</p>
-                                </div>
+                                </Link>
                                 <button onClick={() => onHandleClick(index)}>Theo dõi</button>
                             </div>
                         )
