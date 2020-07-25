@@ -6,6 +6,9 @@ import saveSVG from '../../../assets/images/save.svg';
 import commentSVG from '../../../assets/images/comment.svg';
 import TimeAgo from 'javascript-time-ago';
 import vi from 'javascript-time-ago/locale/vi'
+import { useEffect } from 'react';
+import axios from 'axios';
+import { useState } from 'react';
 
 function convertTimeAgo(date) {
     TimeAgo.addLocale(vi);
@@ -20,14 +23,25 @@ NewFeedItem.propTypes = {
 
 function NewFeedItem(props) {
     const defaultAvatar = 'https://iupac.org/wp-content/uploads/2018/05/default-avatar.png';
-    const { id, userId, caption, imageUrl, createAt } = props.post;
+    const { _id, userId, caption, imageUrl, createAt } = props.post;
+    const [postUser, setPostUser] = useState({});
     const { currentUserInfo } = props;
+
+    useEffect(() => {
+        const url = process.env.REACT_APP_API_URL + `users/${userId}/info`;
+        axios.get(url).then(res => {
+            const data = res.data;
+            setPostUser(res.data);
+        });
+
+    }, []);
+
     return (
         <div className="newfeeds-item">
             <div className="newfeeds-item__header">
-                <div className="avatar" style={{ backgroundImage: `url(${currentUserInfo.avatarUrl || defaultAvatar})` }}></div>
+                <div className="avatar" style={{ backgroundImage: `url(${postUser.avatarUrl || defaultAvatar})` }}></div>
                 <div className="info">
-                    <p className="user-name">{userId === currentUserInfo.id ? currentUserInfo.name : userId}</p>
+                    <p className="user-name">{postUser._id === currentUserInfo.id ? currentUserInfo.name : postUser.name}</p>
                     <p className="time">{convertTimeAgo(createAt)} • <img src={worldSVG} alt="world" /> </p>
                 </div>
             </div>

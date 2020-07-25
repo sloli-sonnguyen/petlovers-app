@@ -1,7 +1,6 @@
 import React from 'react';
 import searchSVG from '../../assets/images/search.svg';
 import './style.scss';
-import { useState } from 'react';
 import axios from 'axios';
 
 
@@ -22,7 +21,6 @@ function FollowerBox(props) {
         const url = process.env.REACT_APP_API_URL + `followings`;
         axios.post(url, newFollowing).then(res => {
 
-            console.log(res);
 
             const newListNotFollowing = [
                 ...listNotFollowing
@@ -34,7 +32,6 @@ function FollowerBox(props) {
 
     }
 
-    console.log(listNotFollowing);
     return (
         <div className="follower-box">
             <h1 className="follower-box__title">Theo dõi</h1>

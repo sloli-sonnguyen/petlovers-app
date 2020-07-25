@@ -27,7 +27,6 @@ function Home(props) {
             const targetIds = data.map((item) => {
                 return item.targetId;
             });
-            setFollowings(data);
 
             axios.get(url_2).then(res => {
                 const users = res.data;
@@ -36,10 +35,13 @@ function Home(props) {
                     if (targetIds.indexOf(user._id) === -1 && user._id !== userInfo.id) newNotFollowingList.push(user);
                 });
                 setListNotFollowing(newNotFollowingList);
+                setFollowings(targetIds);
             });
         })
 
     }, []);
+    console.log('Home page: ');
+    console.log(followings);
 
     return (
         <div className="home-wrap">
@@ -48,7 +50,7 @@ function Home(props) {
                 <div className="main-container">
                     <div className="main__content">
                         <CreatePost userInfo={userInfo} />
-                        <NewFeed type="home" followings={followings} />
+                        <NewFeed type="home" followings={followings} userInfo={userInfo} />
                     </div>
                     <div className="main__follower">
                         <FollowerBox userInfo={userInfo} listNotFollowing={listNotFollowing} setListNotFollowing={setListNotFollowing} />
