@@ -26,15 +26,15 @@ NewFeedItem.propTypes = {
 };
 
 function NewFeedItem(props) {
+
     const defaultAvatar = 'https://iupac.org/wp-content/uploads/2018/05/default-avatar.png';
     const { _id, userId, caption, imageUrl, createAt } = props.post;
     const [postUser, setPostUser] = useState({});
     const [heartStatus, setHeartStatus] = useState(null);
-    const [listReacts, setListReacts] = useState([]);
     const [reactContent, setReactContent] = useState([]);
     const [inputContent, setInputContent] = useState('');
     const [listComment, setListComment] = useState([]);
-    const { currentUserInfo } = props;
+    const { currentUserInfo, userInfo } = props;
 
     useEffect(() => {
         axios.get(baseUrl + `users/${userId}/info`).then(res => {
@@ -48,8 +48,6 @@ function NewFeedItem(props) {
                     setHeartStatus(item);
                 }
             })
-
-            setListReacts(res.data);
 
             // content react
             handleReactInfos(res.data);
@@ -80,7 +78,7 @@ function NewFeedItem(props) {
 
 
 
-    }, [userId]);
+    }, [userId, userInfo]);
 
     function onHandleLikePost() {
         const newReact = {
@@ -138,7 +136,7 @@ function NewFeedItem(props) {
 
                 axios.post(baseUrl + 'comments', newComment).then(res => {
                     // render luon
-                    newComment ={
+                    newComment = {
                         ...newComment,
                         name: currentUserInfo.name,
                         avatarUrl: currentUserInfo.avatarUrl
@@ -151,6 +149,18 @@ function NewFeedItem(props) {
                 });
             }
         }
+    }
+
+    function onDeleteComment(index) {
+        let newListComment = [
+            ...listComment
+        ];
+
+        axios.get(baseUrl + `comments/${listComment[index]._id}/delete`).then(res => {
+            console.log(res);
+            newListComment.splice(index, 1);
+            setListComment(newListComment);
+        })
     }
 
 
@@ -184,7 +194,7 @@ function NewFeedItem(props) {
                                     <Link to={`/profile/${comment.userId}`} className="avatar" style={{ backgroundImage: `url(${comment.avatarUrl})` }}></Link>
                                     <div className="content" >
                                         <p><Link to={`/profile/${comment.userId}`} className="name">{comment.name}</Link>{comment.content}</p>
-                                        <p>Thích • Trả lời • {convertTimeAgo(comment.createAt)}</p>
+                                        <p>Thích • Trả lời •{comment.userId === currentUserInfo.id && <span onClick={() => onDeleteComment(index)}>Xóa • </span>} {convertTimeAgo(comment.createAt)}</p>
                                     </div>
                                 </div>
                             )

@@ -54,13 +54,11 @@ function BoxInput(props) {
         const url = process.env.REACT_APP_API_URL + `posts`;
         axios.post(url, post)
             .then(res => {
-                console.log(res);
                 onCloseInput();
                 window.location.reload(false);
             })
     }
 
-    console.log(post);
     return (
         <div className="box-input">
             <div className="box-wrap">

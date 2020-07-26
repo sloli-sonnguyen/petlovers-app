@@ -59,7 +59,6 @@ function Profile(props) {
         setUserInfo(newUserInfo);
     }
 
-    console.log(userInfo);
     return (
         <div className="profile-wrap">
             <Header userLogined={getUserInfo} />

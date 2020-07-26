@@ -34,6 +34,9 @@
                     font-weight: bold;
                     text-decoration: none;
                 }
+                .user-name:hover {
+                    text-decoration: underline;
+                }
                 .time {
                     display: flex;
                     align-items: center;
@@ -91,6 +94,7 @@
         }
 
         &__react {
+            margin-top: 1rem;
             .type-react {
                 width: 90%;
                 display: flex;
@@ -203,6 +207,13 @@
             display: flex;
             flex-direction: column;
             font-family: sans-serif;
+            span {
+                cursor: pointer;
+            }
+            span:hover,
+            .name:hover {
+                text-decoration: underline;
+            }
             .name {
                 text-decoration: none;
                 cursor: pointer;

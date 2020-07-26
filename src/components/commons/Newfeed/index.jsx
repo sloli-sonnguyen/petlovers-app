@@ -61,7 +61,7 @@ function NewFeed(props) {
             {posts.length > 0 &&
                 posts.map((post, index) => {
                     return (
-                        <NewFeedItem key={index} post={post} currentUserInfo={currentUserInfo} />
+                        <NewFeedItem key={index} post={post} currentUserInfo={currentUserInfo} userInfo={userInfo} />
                     )
                 })
             }

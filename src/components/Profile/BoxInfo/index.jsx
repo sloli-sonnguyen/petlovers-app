@@ -45,7 +45,6 @@ function BoxInfo(props) {
         })
     }
 
-    console.log(userInfo);
 
     return (
         <div className="box-info" style={{ backgroundImage: `url(${userInfo.backgroundUrl})` }}>
