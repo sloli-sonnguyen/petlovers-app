@@ -18,7 +18,6 @@ function Home(props) {
     const [listNotFollowing, setListNotFollowing] = useState([]);
 
     useEffect(() => {
-        console.log('run effect')
         const url_1 = process.env.REACT_APP_API_URL + `followings/by-userId/${userInfo.id}`;
         const url_2 = process.env.REACT_APP_API_URL + `users/get-info`;
 
@@ -40,8 +39,6 @@ function Home(props) {
         })
 
     }, []);
-    console.log('Home page: ');
-    console.log(followings);
 
     return (
         <div className="home-wrap">

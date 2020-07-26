@@ -32,6 +32,8 @@ function NewFeedItem(props) {
     const [heartStatus, setHeartStatus] = useState(null);
     const [listReacts, setListReacts] = useState([]);
     const [reactContent, setReactContent] = useState([]);
+    const [inputContent, setInputContent] = useState('');
+    const [listComment, setListComment] = useState([]);
     const { currentUserInfo } = props;
 
     useEffect(() => {
@@ -49,11 +51,34 @@ function NewFeedItem(props) {
 
             setListReacts(res.data);
 
-             // content react
+            // content react
             handleReactInfos(res.data);
         });
 
-       
+
+        // get comments
+        axios.get(baseUrl + `comments/${_id}/by-postId`).then(res => {
+            let data = res.data;
+            let promises = [];
+            for (let i = 0; i < data.length; i++) {
+                promises.push(axios.get(baseUrl + `users/${data[i].userId}/info`));
+                axios.all(promises).then(resArr => {
+                    let arr = resArr.map(item => {
+                        return item.data;
+                    })
+                    let newListComment = arr.map((item, index) => {
+                        return {
+                            ...data[index],
+                            avatarUrl: item.avatarUrl,
+                            name: item.name
+                        };
+                    });
+                    setListComment(newListComment);
+                })
+            }
+        })
+
+
 
     }, [userId]);
 
@@ -78,25 +103,56 @@ function NewFeedItem(props) {
     function handleReactInfos(reactsData) {
         let promises = [];
         let result = [];
-        for(let i = 0; i < reactsData.length; i++){
+        for (let i = 0; i < reactsData.length; i++) {
             promises.push(axios.get(baseUrl + `users/${reactsData[i].userId}/info`));
         }
 
-        axios.all(promises).then(resArr =>{
-            result = resArr.map(res =>{
+        axios.all(promises).then(resArr => {
+            result = resArr.map(res => {
                 return res.data.name;
             });
             // set content react
             setReactContent(result)
         });
-       
+
+    }
+
+    function onHandleChangeInput(event) {
+        const value = event.target.value;
+        setInputContent(value);
     }
 
 
-          
-      
+    function onKeyDownHandle(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            // tao comment moi va post len server
+            if (inputContent) {
+                let newComment = {
+                    userId: currentUserInfo.id,
+                    postId: _id,
+                    content: inputContent,
+                    createAt: new Date(),
+                }
 
-    console.log('list reacts', listReacts);
+
+                axios.post(baseUrl + 'comments', newComment).then(res => {
+                    // render luon
+                    newComment ={
+                        ...newComment,
+                        name: currentUserInfo.name,
+                        avatarUrl: currentUserInfo.avatarUrl
+                    };
+                    setListComment([
+                        ...listComment,
+                        newComment
+                    ]);
+                    setInputContent('');
+                });
+            }
+        }
+    }
+
 
     return (
         <div className="newfeeds-item">
@@ -120,9 +176,24 @@ function NewFeedItem(props) {
                     <li><img src={commentSVG} alt="comment" />Bình luận</li>
                     <li><img src={saveSVG} alt="save" />Lưu</li>
                 </ul>
+                <div className="list-comment">
+                    {
+                        listComment.map((comment, index) => {
+                            return (
+                                <div key={index} className="item">
+                                    <Link to={`/profile/${comment.userId}`} className="avatar" style={{ backgroundImage: `url(${comment.avatarUrl})` }}></Link>
+                                    <div className="content" >
+                                        <p><Link to={`/profile/${comment.userId}`} className="name">{comment.name}</Link>{comment.content}</p>
+                                        <p>Thích • Trả lời • {convertTimeAgo(comment.createAt)}</p>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </div>
                 <div className="comment">
                     <div className="avatar" style={{ backgroundImage: `url(${currentUserInfo.avatarUrl || defaultAvatar})` }}></div>
-                    <input type="text" placeholder="Hãy bình luận gì đó . . ." />
+                    <input onChange={onHandleChangeInput} name="inputContent" value={inputContent} type="text" placeholder="Hãy bình luận gì đó . . ." onKeyDown={onKeyDownHandle} />
                 </div>
             </div>
         </div>
