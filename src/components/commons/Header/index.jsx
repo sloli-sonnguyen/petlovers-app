@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import bellSVG from '../../../assets/images/menu/bell.svg';
 import menuSVG from '../../../assets/images/menu/open-menu.svg';
 import Menu from '../Menu/index';
+import NotiBox from './NotiBox';
 import { useState } from 'react';
 
 Header.propTypes = {
@@ -15,6 +16,7 @@ Header.propTypes = {
 function Header(props) {
     const { userLogined } = props;
     const [menuStatus, setMenuStatus] = useState(false);
+    const [notiBoxStatus, setNotiBoxStatus] = useState(false);
 
     function renderNav(userLogined) {
         const defaultAvatar = 'https://iupac.org/wp-content/uploads/2018/05/default-avatar.png';
@@ -22,7 +24,7 @@ function Header(props) {
             return (
                 <div className="header-content__navbar">
                     <ul className="navbar__content">
-                        <li className="navbar__item bell"><img src={bellSVG} alt="bell" /></li>
+                        <li className="navbar__item bell"><img src={bellSVG} onClick={() => setNotiBoxStatus(!notiBoxStatus)} alt="bell" /></li>
                         <li className="navbar__item info">
                             <div className="avatar" style={{ backgroundImage: `url(${userLogined.avatarUrl || defaultAvatar})` }}></div>
                             <p>{userLogined.name}</p>
@@ -47,6 +49,7 @@ function Header(props) {
     return (
         <div className="header-wrap">
             {menuStatus && <Menu userInfo={userLogined} />}
+            {notiBoxStatus && <NotiBox currentUserId={userLogined.id} />}
             <div className="header-content">
                 <div className="header-content__title">
                     <h1>Petlovers</h1>
