@@ -56,6 +56,7 @@ function BoxInput(props) {
             .then(res => {
                 console.log(res);
                 onCloseInput();
+                window.location.reload(false);
             })
     }
 

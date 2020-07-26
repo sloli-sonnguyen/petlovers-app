@@ -12,6 +12,8 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import { useState } from 'react';
 
+const baseUrl = process.env.REACT_APP_API_URL;
+
 function convertTimeAgo(date) {
     TimeAgo.addLocale(vi);
     const timeAgo = new TimeAgo('vi');
@@ -29,24 +31,29 @@ function NewFeedItem(props) {
     const [postUser, setPostUser] = useState({});
     const [heartStatus, setHeartStatus] = useState(null);
     const [listReacts, setListReacts] = useState([]);
+    const [reactContent, setReactContent] = useState([]);
     const { currentUserInfo } = props;
 
     useEffect(() => {
-        const baseUrl = process.env.REACT_APP_API_URL;
         axios.get(baseUrl + `users/${userId}/info`).then(res => {
             const data = res.data;
             setPostUser(res.data);
         });
 
-        console.log('postid:', _id);
         axios.get(baseUrl + `postReactions/${_id}/by-postId`).then(res => {
             res.data.forEach(item => {
                 if (item.userId === currentUserInfo.id) {
                     setHeartStatus(item);
                 }
             })
-        })
 
+            setListReacts(res.data);
+
+             // content react
+            handleReactInfos(res.data);
+        });
+
+       
 
     }, [userId]);
 
@@ -56,24 +63,40 @@ function NewFeedItem(props) {
             userId: currentUserInfo.id,
             type: 'heart'
         };
-        const baseUrl = process.env.REACT_APP_API_URL;
         if (!heartStatus) {
             axios.post(baseUrl + 'postReactions', newReact).then(res => {
-                console.log(res);
                 setHeartStatus(newReact);
             });
         } else {
             console.log('react id,', heartStatus._id)
             axios.get(baseUrl + `postReactions/${heartStatus._id}/delete`).then(res => {
-                console.log(res);
                 setHeartStatus(null);
             });
         }
     }
 
-    function renderReactInfos() {
+    function handleReactInfos(reactsData) {
+        let promises = [];
+        let result = [];
+        for(let i = 0; i < reactsData.length; i++){
+            promises.push(axios.get(baseUrl + `users/${reactsData[i].userId}/info`));
+        }
 
+        axios.all(promises).then(resArr =>{
+            result = resArr.map(res =>{
+                return res.data.name;
+            });
+            // set content react
+            setReactContent(result)
+        });
+       
     }
+
+
+          
+      
+
+    console.log('list reacts', listReacts);
 
     return (
         <div className="newfeeds-item">
@@ -87,9 +110,9 @@ function NewFeedItem(props) {
             <div className="newfeeds-item__body">
                 <p className="content">{caption}</p>
                 {imageUrl && <div className="image" style={{ backgroundImage: `url(${imageUrl})` }}></div>}
-                <div className="react-info">
-                    <span>Muromi</span> và 2 người thích • 0 bình luận
-                </div>
+                {reactContent.length > 0 && <div className="react-info">
+                    <span>{reactContent[0]}</span> và {reactContent.length - 1} người thích • 0 bình luận
+                </div>}
             </div>
             <div className="newfeeds-item__react">
                 <ul className="type-react">

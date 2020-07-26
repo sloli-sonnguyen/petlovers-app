@@ -12,11 +12,10 @@ NewFeed.propTypes = {
     followings: PropTypes.array
 };
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
+function sortArray(array) {
+    array.sort((a, b) => {
+        return a.creataAt > b.creataAt ? 1 : -1;
+    });
 }
 
 
@@ -25,12 +24,17 @@ function shuffleArray(array) {
 function NewFeed(props) {
 
     const [posts, setPosts] = useState([]);
-    const { userInfo, followings, type } = props;
+    const { userInfo, followings, type, currentUserInfo } = props;
 
     useEffect(() => {
 
-        // Lay post cua nhung nguoi minh dang follow
-        const postUserIds = followings || [userInfo.id];
+        // Lay id cua nhung nguoi minh follow cua nhung nguoi minh dang follow
+        let postUserIds = [];
+        if (followings) {
+            postUserIds = [...followings, userInfo.id];
+        } else {
+            postUserIds = [userInfo.id];
+        }
         if (postUserIds) {
             const url = process.env.REACT_APP_API_URL + `posts/by-userId/`;
             let arrayAxios = [];
@@ -45,7 +49,7 @@ function NewFeed(props) {
                     return a.concat(b);
                 }, []);
 
-                shuffleArray(newPosts);
+                sortArray(newPosts);
                 setPosts(newPosts);
             });
         }
@@ -57,7 +61,7 @@ function NewFeed(props) {
             {posts.length > 0 &&
                 posts.map((post, index) => {
                     return (
-                        <NewFeedItem key={index} post={post} currentUserInfo={userInfo} />
+                        <NewFeedItem key={index} post={post} currentUserInfo={currentUserInfo} />
                     )
                 })
             }

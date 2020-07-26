@@ -50,7 +50,7 @@ function Home(props) {
                 <div className="main-container">
                     <div className="main__content">
                         <CreatePost userInfo={userInfo} />
-                        <NewFeed type="home" followings={followings} userInfo={userInfo} />
+                        <NewFeed type="home" followings={followings} userInfo={userInfo} currentUserInfo={userInfo} />
                     </div>
                     <div className="main__follower">
                         <FollowerBox userInfo={userInfo} listNotFollowing={listNotFollowing} setListNotFollowing={setListNotFollowing} />

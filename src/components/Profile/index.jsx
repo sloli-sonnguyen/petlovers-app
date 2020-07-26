@@ -68,7 +68,7 @@ function Profile(props) {
                     <BoxInfo userInfo={userInfo} onUploadImage={onUploadImage} isMe={getUserInfo.id === userId ? true : false} />
                     <div className="content">
                         <div className="newfeed-wrap">
-                            <NewFeed userInfo={userInfo} type="profile" />
+                            <NewFeed userInfo={userInfo} type="profile" currentUserInfo={getUserInfo} />
                         </div>
                         <div className="gallery-wrap">
                             <Gallery />
