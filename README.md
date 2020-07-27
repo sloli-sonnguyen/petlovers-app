@@ -1,4 +1,4 @@
-## Petlovers
+# Petlovers
 Web app mạng xã hội. Web có chức năng đăng nhập, tạo tài khoản mới; upload ảnh avatar và backgroud, chỉnh sửa thông tin người dùng.
 Chức năng tạo bài viết, bình luận, thả tim, theo dõi người dùng khác. 
 Trang web theo dạng SPA. Backend chỉ tạo các api.
