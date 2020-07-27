@@ -94,6 +94,45 @@ $position-common: 5%;
                     margin-right: 1rem;
                 }
             }
+
+            .edit-box {
+                position: absolute;
+                right: 4rem;
+                bottom: 10rem;
+                background-color: white;
+                border-radius: 20px;
+                padding: 3rem 3rem;
+
+                input {
+                    font-size: 1.4rem;
+                    line-height: 3rem;
+                    border-radius: 20px;
+                    border: none;
+                    text-indent: 1rem;
+                    margin-bottom: 2rem;
+                }
+
+                .button-box {
+                    position: absolute;
+                    bottom: 2%;
+                    right: 2%;
+                    button {
+                        margin: 0.2rem;
+                        font-size: 1rem;
+                        padding: 0.5rem 1rem;
+                        border-radius: 10px;
+                        border: none;
+                        cursor: pointer;
+                        color: white;
+                    }
+                    button:nth-child(1) {
+                        background-color: tomato;
+                    }
+                    button:nth-child(2) {
+                        background-color: #409ee8;
+                    }
+                }
+            }
         }
         .content {
             display: flex;
