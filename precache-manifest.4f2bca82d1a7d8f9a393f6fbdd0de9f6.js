@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9a9c9f15eb722847d6f6088e5755d50d",
+    "revision": "4c8c9bda6b8c668e1109ad625e476efe",
     "url": "/petlovers-app-frontend/index.html"
   },
   {
-    "revision": "b1dcf3bf5bd938cf73fc",
+    "revision": "719c62d40bb8519d0175",
     "url": "/petlovers-app-frontend/static/css/main.742b01d5.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/petlovers-app-frontend/static/js/2.7e3b2444.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b1dcf3bf5bd938cf73fc",
-    "url": "/petlovers-app-frontend/static/js/main.8d5488e2.chunk.js"
+    "revision": "719c62d40bb8519d0175",
+    "url": "/petlovers-app-frontend/static/js/main.28e00c3e.chunk.js"
   },
   {
     "revision": "8c6a54ddda9b36c935c1",

@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/petlovers-app-frontend/static/css/main.742b01d5.chunk.css",
-    "main.js": "/petlovers-app-frontend/static/js/main.8d5488e2.chunk.js",
-    "main.js.map": "/petlovers-app-frontend/static/js/main.8d5488e2.chunk.js.map",
+    "main.js": "/petlovers-app-frontend/static/js/main.28e00c3e.chunk.js",
+    "main.js.map": "/petlovers-app-frontend/static/js/main.28e00c3e.chunk.js.map",
     "runtime-main.js": "/petlovers-app-frontend/static/js/runtime-main.bda4d31a.js",
     "runtime-main.js.map": "/petlovers-app-frontend/static/js/runtime-main.bda4d31a.js.map",
     "static/js/2.7e3b2444.chunk.js": "/petlovers-app-frontend/static/js/2.7e3b2444.chunk.js",
     "static/js/2.7e3b2444.chunk.js.map": "/petlovers-app-frontend/static/js/2.7e3b2444.chunk.js.map",
     "index.html": "/petlovers-app-frontend/index.html",
-    "precache-manifest.1933e35f669af3a2c9e9ef78ff0edc5d.js": "/petlovers-app-frontend/precache-manifest.1933e35f669af3a2c9e9ef78ff0edc5d.js",
+    "precache-manifest.4f2bca82d1a7d8f9a393f6fbdd0de9f6.js": "/petlovers-app-frontend/precache-manifest.4f2bca82d1a7d8f9a393f6fbdd0de9f6.js",
     "service-worker.js": "/petlovers-app-frontend/service-worker.js",
     "static/css/main.742b01d5.chunk.css.map": "/petlovers-app-frontend/static/css/main.742b01d5.chunk.css.map",
     "static/js/2.7e3b2444.chunk.js.LICENSE.txt": "/petlovers-app-frontend/static/js/2.7e3b2444.chunk.js.LICENSE.txt",
@@ -37,6 +37,6 @@
     "static/js/runtime-main.bda4d31a.js",
     "static/js/2.7e3b2444.chunk.js",
     "static/css/main.742b01d5.chunk.css",
-    "static/js/main.8d5488e2.chunk.js"
+    "static/js/main.28e00c3e.chunk.js"
   ]
 }
