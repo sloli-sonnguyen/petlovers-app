@@ -7,7 +7,7 @@ Trang web theo dạng SPA. Backend chỉ tạo các api.
 - Cloudinary để lưu ảnh
 - javascript-time-ago để hiện thị thời gian giống facebook
 - axios 
-Link demo : https://sloli-sonnguyen.github.io/petlovers-app-frontend/ 
+- Link demo : https://sloli-sonnguyen.github.io/petlovers-app-frontend/ 
 ( Nếu không thực hiện được chức năng đăng nhập / tạo tài khoản --> server backend bị down do sử dụng heroku free. Hãy start lại server bằng link ở dưới)
 # Backend
 - Expressjs
@@ -15,4 +15,4 @@ Link demo : https://sloli-sonnguyen.github.io/petlovers-app-frontend/
 - Mongoose
 - Bcrypt
 - JSON web token
-Link sever: https://petlovers-backend.herokuapp.com/
+- Link sever: https://petlovers-backend.herokuapp.com/
