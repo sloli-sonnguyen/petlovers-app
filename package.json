@@ -1,6 +1,6 @@
 {
   "name": "petlovers-app",
-  "homepage": "http://{sloli-sonnguyen}.github.io/{petlovers-app-frontend}",
+  "homepage": "http://sloli-sonnguyen.github.io/petlovers-app-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
