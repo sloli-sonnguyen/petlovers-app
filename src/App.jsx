@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter , Switch, Route } from "react-router-dom";
 import PrivateRoute from './PrivateRoute';
 import { AuthContext } from './context/authContext';
 import NotFound from './components/commons/NotFound/index';
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ authToken: authToken, setAuthToken: setAuthToken }}>
-      <Router>
+      <HashRouter basename='/'>
         <div className="App">
           <Switch>
             <Route path="/login" component={Login} />
@@ -29,7 +29,7 @@ function App() {
             <Route component={NotFound} />
           </Switch>
         </div>
-      </Router>
+      </HashRouter>
     </AuthContext.Provider >
   );
 }
