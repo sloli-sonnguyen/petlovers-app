@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5153c2721b7e95f09da35a3f71e58800",
+    "revision": "00f03f2480ad9a4c859d2a4175568da2",
     "url": "/petlovers-app-frontend/index.html"
   },
   {
-    "revision": "a75b80e4e062fd1128e4",
+    "revision": "6741610eeb2f5327f745",
     "url": "/petlovers-app-frontend/static/css/main.862a3d1b.chunk.css"
   },
   {
-    "revision": "c73dde8a32bb3fca88fd",
-    "url": "/petlovers-app-frontend/static/js/2.0a5335a7.chunk.js"
+    "revision": "5723cf700d3442fa1baa",
+    "url": "/petlovers-app-frontend/static/js/2.78c0a8a1.chunk.js"
   },
   {
     "revision": "0b08544f54c9906705be39c03b7e79ad",
-    "url": "/petlovers-app-frontend/static/js/2.0a5335a7.chunk.js.LICENSE.txt"
+    "url": "/petlovers-app-frontend/static/js/2.78c0a8a1.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a75b80e4e062fd1128e4",
-    "url": "/petlovers-app-frontend/static/js/main.4e3983ef.chunk.js"
+    "revision": "6741610eeb2f5327f745",
+    "url": "/petlovers-app-frontend/static/js/main.d68f3afa.chunk.js"
   },
   {
     "revision": "8c6a54ddda9b36c935c1",
