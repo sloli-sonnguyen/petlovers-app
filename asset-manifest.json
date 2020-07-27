@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/%7Bpetlovers-app-frontend%7D/static/css/main.a759fdd7.chunk.css",
+    "main.js": "/%7Bpetlovers-app-frontend%7D/static/js/main.078f14a1.chunk.js",
+    "main.js.map": "/%7Bpetlovers-app-frontend%7D/static/js/main.078f14a1.chunk.js.map",
+    "runtime-main.js": "/%7Bpetlovers-app-frontend%7D/static/js/runtime-main.bad51216.js",
+    "runtime-main.js.map": "/%7Bpetlovers-app-frontend%7D/static/js/runtime-main.bad51216.js.map",
+    "static/js/2.dd58b4b5.chunk.js": "/%7Bpetlovers-app-frontend%7D/static/js/2.dd58b4b5.chunk.js",
+    "static/js/2.dd58b4b5.chunk.js.map": "/%7Bpetlovers-app-frontend%7D/static/js/2.dd58b4b5.chunk.js.map",
+    "index.html": "/%7Bpetlovers-app-frontend%7D/index.html",
+    "precache-manifest.4d020c7cf354979fc79584bd0b32a61c.js": "/%7Bpetlovers-app-frontend%7D/precache-manifest.4d020c7cf354979fc79584bd0b32a61c.js",
+    "service-worker.js": "/%7Bpetlovers-app-frontend%7D/service-worker.js",
+    "static/css/main.a759fdd7.chunk.css.map": "/%7Bpetlovers-app-frontend%7D/static/css/main.a759fdd7.chunk.css.map",
+    "static/js/2.dd58b4b5.chunk.js.LICENSE.txt": "/%7Bpetlovers-app-frontend%7D/static/js/2.dd58b4b5.chunk.js.LICENSE.txt",
+    "static/media/ball.svg": "/%7Bpetlovers-app-frontend%7D/static/media/ball.0b3a9c06.svg",
+    "static/media/bell.svg": "/%7Bpetlovers-app-frontend%7D/static/media/bell.ffb4c987.svg",
+    "static/media/bone.svg": "/%7Bpetlovers-app-frontend%7D/static/media/bone.1e54352a.svg",
+    "static/media/camera.svg": "/%7Bpetlovers-app-frontend%7D/static/media/camera.a5377696.svg",
+    "static/media/cat.svg": "/%7Bpetlovers-app-frontend%7D/static/media/cat.ee5d6238.svg",
+    "static/media/style.scss": "/%7Bpetlovers-app-frontend%7D/static/media/catAvatar.9f288b75.jpg",
+    "static/media/catsleep.png": "/%7Bpetlovers-app-frontend%7D/static/media/catsleep.256b6e53.png",
+    "static/media/comment.svg": "/%7Bpetlovers-app-frontend%7D/static/media/comment.55da0b1f.svg",
+    "static/media/edit.svg": "/%7Bpetlovers-app-frontend%7D/static/media/edit.0679ff7c.svg",
+    "static/media/food.svg": "/%7Bpetlovers-app-frontend%7D/static/media/food.88b23f77.svg",
+    "static/media/gallery.svg": "/%7Bpetlovers-app-frontend%7D/static/media/gallery.6ade051a.svg",
+    "static/media/heart-active.svg": "/%7Bpetlovers-app-frontend%7D/static/media/heart-active.a8cd76c1.svg",
+    "static/media/heart.svg": "/%7Bpetlovers-app-frontend%7D/static/media/heart.70ebbcd1.svg",
+    "static/media/home.svg": "/%7Bpetlovers-app-frontend%7D/static/media/home.6606c14d.svg",
+    "static/media/logout.svg": "/%7Bpetlovers-app-frontend%7D/static/media/logout.e03fdaf3.svg",
+    "static/media/open-menu.svg": "/%7Bpetlovers-app-frontend%7D/static/media/open-menu.12327444.svg",
+    "static/media/save.svg": "/%7Bpetlovers-app-frontend%7D/static/media/save.3a1ffe6b.svg",
+    "static/media/search.svg": "/%7Bpetlovers-app-frontend%7D/static/media/search.a0c5eda5.svg",
+    "static/media/user.svg": "/%7Bpetlovers-app-frontend%7D/static/media/user.accbd70d.svg",
+    "static/media/world.svg": "/%7Bpetlovers-app-frontend%7D/static/media/world.54e8062a.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bad51216.js",
+    "static/js/2.dd58b4b5.chunk.js",
+    "static/css/main.a759fdd7.chunk.css",
+    "static/js/main.078f14a1.chunk.js"
+  ]
+}
